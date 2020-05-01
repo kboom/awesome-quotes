@@ -10,6 +10,27 @@ toc::[]
 
 ---
 
+== Management
+
+=== Incentives are counterproductive
+
+There are three effective motivators:
+
+Autonomy::
+Urge to direct your own life.
+
+Mastery::
+The desire to become better and better at something that matters.
+
+Purpose::
+The need to do something what we do in service to something larger to ourselves.
+
+== Architecture
+
+=== Everything in software architecture is a trade-off.
+
+=== Why is more important than how.
+
 === Scale comes from simplicity.
 
 === Successful abstractions are the simple ones.
