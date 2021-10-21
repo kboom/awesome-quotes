@@ -10,9 +10,13 @@ toc::[]
 
 ---
 
+== Productivity
+
+=== If you pile up enough tomorrows then you’ll be left with nothing but a bunch of empty yesterdays.
+
 == Management
 
-=== Incentives are counterproductive
+=== Incentives are counterproductive.
 
 There are three effective motivators:
 
@@ -24,6 +28,43 @@ The desire to become better and better at something that matters.
 
 Purpose::
 The need to do something what we do in service to something larger to ourselves.
+
+=== Most meetings should be optional.
+
+=== In a hierarchy every employee tends to rise to his level of incompetence.
+
+=== Above all, resist the urge to manage.
+
+=== Traditional managers worry about how to get things done, whereas great managers worry about what things get done and trust their team to figure out how to do it.
+
+=== Hope is not a strategy.
+
+Most team leaders grit their teeth, avert their eyes, and just hope that the low performer either magically improves or
+just goes away. Yet it is extremely rare that this person does either. While the leader is hoping and the low performer
+isn’t improving (or leaving), high performers on the team waste valuable time pulling the low performer along, and team
+morale leaks away into the ether. You can be sure that the team knows the low performer is there even if you’re ignoring
+them—in fact, the team is acutely aware of who the low performers are, because they have to carry them. Ignoring low
+performers is not only a way to keep new high performers from joining your team, but it’s also a way to encourage
+existing high performers to leave.
+
+=== A people hire other A people; B people hire C people.
+
+== Testing
+
+=== Strive for Unchanging Tests.
+
+The ideal test is unchanging: after it’s written, it never needs to change unless the requirements of the system under
+test change.
+
+* Test the public API and not the implementation details.
+* Test the system state and not the interactions.
+** Do not check if something gets called or not.
+** Avoid mocking and prefer using real objects.
+
+=== DAMP is superior to DRY.
+
+Descriptive And Meaningful Phrases. A little bit of duplication is OK in tests so long as that duplication makes the
+test simpler and clearer.
 
 == Architecture
 
@@ -71,3 +112,7 @@ In software there is a diseconomy of scale the more people you have the more pro
 === Beware the cycle of data inadequacy, this is why a real data system is needed.
 
 image::https://www.confluent.io/wp-content/uploads/image06-1024x681.png[The Cycle of Data Inadequacy]
+
+== References
+
+* link:https://learning.oreilly.com/library/view/software-engineering-at/9781492082781/ch12.html#unit_testing[Software Engineering at Google]
