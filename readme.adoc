@@ -17,6 +17,11 @@ toc::[]
 
 === If you pile up enough tomorrows then you’ll be left with nothing but a bunch of empty yesterdays.
 
+=== A few weeks of programming can save you hours of planning.
+
+Early feedback on a concrete implementation is a great way to discover gaps in your knowledge.
+Try to solve the problem quickly taking shortcuts. Once you know the way, you'll be able to make steady and incremental progress as an improvement to what you already had. This way you'll be able to tell whether something is actually worth it or not - how much does it impact the solution that you already have.
+
 == Management
 
 === Incentives are counterproductive.
@@ -42,6 +47,8 @@ Make people interested, mainly by combining the three motivators - autonomy, mas
 
 === Above all, resist the urge to manage.
 
+=== If you cannot solve a problem without programming you cannot solve a problem with programming.
+
 === Traditional managers worry about how to get things done, whereas great managers worry about what things get done and trust their team to figure out how to do it.
 
 === Hope is not a strategy.
@@ -55,6 +62,12 @@ performers is not only a way to keep new high performers from joining your team,
 existing high performers to leave.
 
 === A people hire other A people; B people hire C people.
+
+=== It’s easier to ask for forgiveness than it is to get permission.
+
+Sometimes people are not willing to take risks and accept responsibility for things that go wrong.
+But without taking smart risks, there is no progress.
+If someone's blocking your progress it is sometimes better to just do it, having a back-out plan if it doesn't work.
 
 == Testing
 
@@ -73,9 +86,25 @@ test change.
 Descriptive And Meaningful Phrases. A little bit of duplication is OK in tests so long as that duplication makes the
 test simpler and clearer.
 
+=== Decouple the places where people make the most mistakes from the places where they can cause failures.
+
+=== The acronym TDD should be taken to mean testability-driven design.
+
+Not only should the focus on testing indirectly lead to better design, but problem decomposition according to divide _et regna_ should focus directly on producing modules that are easy to test.
+
+=== If you don’t trust a library, don’t use it.
+
+You should never test a function from the language or from an external library. If you don’t trust it, don’t use it.
+
 == Architecture
 
 === Everything in software architecture is a trade-off.
+
+=== A good architect maximizes the number of decisions not made.
+
+A good architect pretends that the decision has not been made, and shapes the system such that those decisions can still be deferred or changed for as long as possible. The longer you wait to make those decisions, the more information you have with which to make them properly.
+
+=== Too strict design cripples the ability to evolve but with too much freedom, we don’t have a design at all.
 
 === A structure is stable if cohesion is strong and coupling is low.
 
@@ -96,11 +125,17 @@ Coupling, though, comes in many forms, and I’ve seen a number of misunderstand
 We tend to be drawn to exciting problems to solve without thinking if these really are problems worth solving.
 Remember that time cannot expand and by investing in once place we're loosing in other, potentially more beneficial.
 
+=== The choice between availability and consistency is driven by the business requirements - least cost optimization.
+
 === Scale comes from simplicity.
+
+Simple systems allow restrictive assumptions which enable powerful optimizations.
+The best example is SQL vs NoSQL. NoSQL are so fast and scalable because they sacrificed some of the features and guarantees relational database have.
 
 === Successful abstractions are the simple ones.
 
 Simple ideas are actually much more likely to be used because of adoption and being able to grow. Simple ideas must fit inside your brain. __MapReduce__ can be one example.
+
 
 === Coupling comes in many forms.
 
@@ -110,24 +145,38 @@ Simple ideas are actually much more likely to be used because of adoption and be
 * *Common coupling* occurs when two or more microservices make use of a common set of data. A simple and common example of this form of coupling would be multiple microservices making use of the same shared database, but it could also manifest itself in the use of shared memory or a shared filesystem. The main issue with common coupling is that changes to the structure of the data can impact multiple microservices at once. Sources of common coupling are also potential sources of resource contention and central points of failure.
 * *Content coupling* describes a situation in which an upstream service reaches into the internals of a downstream service and changes its internal state. The most common manifestation of this is an external service accessing another microservice’s database and changing it directly. With common coupling, you understand that you are making use of a shared, external dependency. You know it’s not under your control. With content coupling, the lines of ownership become less clear, and it becomes more difficult for developers to change a system.
 
+=== APIs should make it easy to do things right and make it hard to do them wrong.
 
+However, if the interfaces are too restrictive people will work around them, negating their benefit, so this is a tricky balance to get right.
 
 === The data always outlives code.
 
 === Design your data model for the sake of your domain model, not your domain model for the sake of your data model.
 
-=== Constraints enforce elegant design and can give rise to its better properties. The more constraints the more one frees one's self.
+=== We always abstract away things we cannot comprehend.
+
+=== Elegant solutions are properties of constrained problems.
+
+Constraints enforce elegant design and can give rise to its better properties.
+Constraints guide the "shape" of an architecture by restricting the universe of choices.
+The more constraints the more one frees one's self.
+If true constraints aren't discovered on time, the complexity will be where it really shouldn't, as people need challenges.
 
 === Having a language that allows you to do anything is not an advantage, it is a liability. You have to find the heart and essence and build on top of that.
 
 === Software is built not like architecture.
+
 In architecture you can or build buildings from smaller buildings. In software you create software from smaller software and there are no boundaries. This is why the simple ideas are so important - they can bubble up to the top level of the design. Best example might be map reduce. Building architecture has natural scale - a human being. It is designed for a human scale and this is why it impresses us. For software there is no such thing. A human brain may be a limit - can we fit the idea in our brain? Having too much stuff in your brains slows you down and makes you prone to errors.
 
 === We are far to easily impressed and imprisoned by the concept of size.
-Smallness has virtues we should insist on. We should not assume growth without bounds. Economy of scale so much engrained in us but does not apply in software. It does not get cheaper with size.
-* How much work does the developers do on things accidental as opposed to essential? Look at how many people work on this code, it has to be special!
 
-=== Avoid cargo-cult programming.
+Smallness has virtues we should insist on. We should not assume growth without bounds. Economy of scale so much engrained in us but does not apply in software. It does not get cheaper with size. Look at how many people work on this code, it has to be special!
+
+=== Focus on what is essential, not on what is incidental.
+
+How much work does the developers do on things accidental as opposed to essential?
+
+=== Avoid cargo-cult programming - software presents diseconomy of scale
 
 In software there is a diseconomy of scale the more people you have the more problems you will get - cargo cult programming.
 
@@ -146,6 +195,33 @@ In software there is a diseconomy of scale the more people you have the more pro
 === Beware the cycle of data inadequacy, this is why a real data system is needed.
 
 image::https://www.confluent.io/wp-content/uploads/image06-1024x681.png[The Cycle of Data Inadequacy]
+
+=== Architects often fall into a trap—a trap that hinges on their fear of duplication.
+
+There are different kinds of duplication. There is true duplication, in which every change to one instance necessitates the same change to every duplicate of that instance. Then there is false or accidental duplication. If two apparently duplicated sections of code evolve along different paths—if they change at different rates, and for different reasons—then they are not true duplicates. Return to them in a few years, and you’ll find that they are very different from each other. For this reason, care must be taken to avoid unifying them. Otherwise, separating them later will be a challenge.
+
+== Domain-driven design
+
+=== Use Ubiquitous Language
+
+Ubiquitous language refers to the idea that we should strive to use the same terms in our code as the users use. The idea is that having a common language between the delivery team and the actual people will make it easier to model the real-world domain and also should improve communication.{building-microservices}
+
+=== Model around aggregates and bounded contexts.
+
+The aggregate is a self-contained state machine that focuses on a single domain concept in our system, with the bounded context representing a collection of associated aggregates, again with an explicit interface to the wider world.
+Each has an internal-only representation and the external representation we expose.
+
+=== One entity might exist in different domains under different names.
+
+This shared model like customer can have different meanings in the different bounded contexts and therefore might be called different things. We might be happy to keep the name “customer” in finance, but in the warehouse we might call them a “recipient,” as that is the role they play in that context. We store information about the customer in both locations, but the information is different. If the same piece of information is used in two different domains for different things, it must be duplicated, maybe using a different name, rather than introducing coupling in these domains.
+
+== Programming
+
+=== Make illegal states unrepresentable.
+
+We’re trying to capture business rules in the type system. If we do this properly, invalid situations can’t ever exist in the code and we never need to write unit tests for them. Instead, we have “compile-time” unit tests. We can use visibility modifiers like private constructors as well as smart type hierarchies perfectly matching the domain invariants and so on. Another important benefit of this approach is that it actually documents the domain better.
+
+In other words, we should never allow illegal combinations of state by enforcing that invariant by the type system itself. If we have a type which can have many combinations of fields set and some of them are invalid we most likely need to externalize that implicit choice into an explicit choice of stand-alone types - valid combinations.
 
 == References
 
