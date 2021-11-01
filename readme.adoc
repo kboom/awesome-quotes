@@ -22,6 +22,16 @@ toc::[]
 Early feedback on a concrete implementation is a great way to discover gaps in your knowledge.
 Try to solve the problem quickly taking shortcuts. Once you know the way, you'll be able to make steady and incremental progress as an improvement to what you already had. This way you'll be able to tell whether something is actually worth it or not - how much does it impact the solution that you already have.
 
+=== Don't confuse activity with an outcome.
+
+If you have a hammer, everything looks like a nail.
+Then even the simple things might be challenging to get done, since we might unconsciously insist on using the wrong tools, reluctant do admit there is a better solution involving a technique we don't like. Don't do it.
+You must have a clear understanding of what you expect to achieve.
+
+== Quality
+
+=== Perfection is not when there is nothing more to add, but when is nothing else you can take away
+
 == Management
 
 === Incentives are counterproductive.
@@ -99,6 +109,10 @@ You should never test a function from the language or from an external library. 
 == Architecture
 
 === Everything in software architecture is a trade-off.
+
+=== The architecture of a real-world running system is never clean or pristine.
+
+If you want a “clean” architecture, by all means laminate a printout of an idealized version of the system architecture you might have had, if only you had perfect foresight and limitless funds. Real system architecture is a constantly evolving thing that must adapt as needs and knowledge change. Technical debt is a tool that helps remaining agile.
 
 === A good architect maximizes the number of decisions not made.
 
@@ -199,6 +213,14 @@ image::https://www.confluent.io/wp-content/uploads/image06-1024x681.png[The Cycl
 === Architects often fall into a trap—a trap that hinges on their fear of duplication.
 
 There are different kinds of duplication. There is true duplication, in which every change to one instance necessitates the same change to every duplicate of that instance. Then there is false or accidental duplication. If two apparently duplicated sections of code evolve along different paths—if they change at different rates, and for different reasons—then they are not true duplicates. Return to them in a few years, and you’ll find that they are very different from each other. For this reason, care must be taken to avoid unifying them. Otherwise, separating them later will be a challenge.
+
+=== Architecture is not the goal. You don’t “win” by having an architecture.
+
+Adopting any architecture should be a conscious decision, one based on rational decision making. For instance, you should be thinking of migrating to a microservice architecture only if you can’t find any easier way to move toward your end goal with your current architecture.
+
+=== Big-bang migrations never end well.
+
+Prematurely decomposing a system into microservices can be costly, especially if you are new to the domain. In many ways, having an existing codebase you want to decompose into microservices is much easier than trying to go to microservices from the beginning for this very reason. Small incremental steps can tell you if you are moving into the right direction, before it's too late.
 
 == Domain-driven design
 
