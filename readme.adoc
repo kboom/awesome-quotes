@@ -30,7 +30,7 @@ You must have a clear understanding of what you expect to achieve.
 
 == Quality
 
-=== Perfection is not when there is nothing more to add, but when is nothing else you can take away
+=== Perfection is not when there is nothing more to add but when there is nothing else to take away
 
 == Management
 
