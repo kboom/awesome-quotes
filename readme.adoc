@@ -28,6 +28,10 @@ If you have a hammer, everything looks like a nail.
 Then even the simple things might be challenging to get done, since we might unconsciously insist on using the wrong tools, reluctant do admit there is a better solution involving a technique we don't like. Don't do it.
 You must have a clear understanding of what you expect to achieve.
 
+=== Start with the hardest problem first
+
+Anything else you do may possibly a waste unless you identify the main problem and figure out the solution for it.
+
 == Quality
 
 === Perfection is not when there is nothing more to add but when there is nothing else to take away
