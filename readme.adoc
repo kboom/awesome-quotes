@@ -32,6 +32,8 @@ You must have a clear understanding of what you expect to achieve.
 
 Anything else you do may possibly a waste unless you identify the main problem and figure out the solution for it.
 
+=== Don't put off doing something that's difficult or painful. Instead, we do it more often so that we figure out how to make it routine.
+
 == Quality
 
 === Perfection is not when there is nothing more to add but when there is nothing else to take away
