@@ -216,6 +216,12 @@ In software there is a diseconomy of scale the more people you have the more pro
 
 image::https://www.confluent.io/wp-content/uploads/image06-1024x681.png[The Cycle of Data Inadequacy]
 
+=== Throttling is the more targeted version of circuit breaking
+
+Circuit breakers are there to save the system from crashing completely and allow fast recovery while cutting of the functionality for all users.
+Throttling is there to do the same but can be scoped at client level and begins to work before any failures occur.
+Throttling can have multiple phases which may include some mechanics to indicate to the customer that too many calls are being made - like providing headers with warnings and injecting artificial delays before eventually 429 the traffic.
+
 === Architects often fall into a trap—a trap that hinges on their fear of duplication.
 
 There are different kinds of duplication. There is true duplication, in which every change to one instance necessitates the same change to every duplicate of that instance. Then there is false or accidental duplication. If two apparently duplicated sections of code evolve along different paths—if they change at different rates, and for different reasons—then they are not true duplicates. Return to them in a few years, and you’ll find that they are very different from each other. For this reason, care must be taken to avoid unifying them. Otherwise, separating them later will be a challenge.
