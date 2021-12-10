@@ -87,6 +87,10 @@ If someone's blocking your progress it is sometimes better to just do it, having
 
 == Testing
 
+=== Lack of failure is not a success
+
+You have to design the system so that when a failure occurs, and it will, the system will successfuly degrade gracefully and then recover quickly.
+
 === Strive for Unchanging Tests.
 
 The ideal test is unchanging: after it’s written, it never needs to change unless the requirements of the system under
