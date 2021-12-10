@@ -224,7 +224,7 @@ image::https://www.confluent.io/wp-content/uploads/image06-1024x681.png[The Cycl
 
 Circuit breakers are there to save the system from crashing completely and allow fast recovery while cutting of the functionality for all users.
 Throttling is there to do the same but can be scoped at client level and begins to work before any failures occur.
-Throttling can have multiple phases which may include some mechanics to indicate to the customer that too many calls are being made - like providing headers with warnings and injecting artificial delays before eventually 429 the traffic.
+Throttling can have multiple phases which may include some mechanics to indicate to the customer that too many calls are being made - like providing headers with warnings and injecting artificial delays before eventually 429 the traffic. Injecting latency can help level out a load a bit and slow down the consumer.
 
 === Architects often fall into a trap—a trap that hinges on their fear of duplication.
 
